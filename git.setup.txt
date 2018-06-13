@@ -1,0 +1,49 @@
+
+Git and Github Setup
+====================
+
+Setup Git and Github to work with SSH:
+https://help.github.com/enterprise/2.13/user/articles/connecting-to-github-with-ssh/
+
+Generate a new SSH key:
+ssh-keygen -t rsa -b 4096 -C "rene.tonon@hpe.com"
+(pwd: hp3hp3)
+
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/rene/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/rene/.ssh/id_rsa.
+Your public key has been saved in /home/rene/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:EOWXTLRFLR7/cMs8Ujsh2sUDDKMoyc6mWgh9eGC0SzE rene.tonon@hpe.com
+The key's randomart image is:
++---[RSA 4096]----+
+|  E   ....o+=.   |
+| . +. .o.o.++o.  |
+|  =  +....=. +o  |
+| + +o .. .  ..o*.|
+|. + o+  S   o *+=|
+|. .oo      . o B.|
+| . o          . o|
+|  o              |
+| .               |
++----[SHA256]-----+
+
+Add your SSH key to the ssh-agent:
+ssh-add ~/.ssh/id_rsa
+
+Add the public key to your github account as per https://help.github.com/enterprise/2.13/user/articles/adding-a-new-ssh-key-to-your-github-account/ .
+
+git init
+git config --local user.name "rene-tonon"
+git config --local user.email rene.tonon@hpe.com
+
+git clone git@github.hpe.com:rene-tonon/telent-nrts2-utm.git
+
+git add new-file.txt
+git commit
+git push
+
+
+

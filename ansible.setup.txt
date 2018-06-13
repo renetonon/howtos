@@ -1,0 +1,5 @@
+
+http://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installation-guide
+
+sudo yum install ansible
+
